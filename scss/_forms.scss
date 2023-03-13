@@ -1,0 +1,49 @@
+@use 'colors' as colors;
+@use 'fonts' as fonts;
+
+
+.btn-primary{
+    @extend .font-button2;
+    border-radius: 100px;
+    background-color: colors.$cyan-light-primary;
+    color: colors.$cyan-dark-primary;
+    padding: 0.875rem 1.375rem ;
+    border: none;
+}
+
+.btn-primary:hover{
+    background-color: colors.$cyan-dark-primary;
+    color: colors.$white-primary;
+}
+
+
+.btn-outline{
+    @extend .font-button2;
+    border-radius: 100px;
+    background-color: colors.$cyan-dark-primary;
+    color: colors.$white-primary;
+    padding: 0.875rem 1.375rem ;
+    border: none;
+}
+
+.btn-outline:hover{
+    background-color: colors.$white-primary;
+    color: colors.$cyan-dark-primary;
+    border: 3px solid colors.$cyan-dark-primary;
+}
+
+
+.btn-text{
+    @extend .font-button2;
+    background-color: transparent;
+    color: colors.$black-primary;
+    padding: 0;
+    border: none;
+
+}
+
+.btn-text:hover{
+    background-color: transparent;
+    color: colors.$cyan-dark-primary;
+    text-decoration: underline;
+}

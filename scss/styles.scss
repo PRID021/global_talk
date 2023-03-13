@@ -1,0 +1,110 @@
+
+@use 'reset' as reset;
+@use 'colors' as colors;
+@use 'fonts' as fonts;
+@use 'forms' as forms;
+
+
+
+
+.label{
+    @extend fonts, .font-label !optional;; 
+    color: colors.$grey-dark-primary;
+}
+
+
+
+.img-circle-container{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    
+}
+
+.circle-img-avatar{
+    width: 2rem;
+    height:2rem;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+    border: 2px solid #CCC;
+}
+
+
+
+
+.layout{
+    display: grid;
+    grid-template-columns: 0.9375rem repeat(3, 1fr 1.25rem ) 1fr 0.9375rem;
+    grid-template-rows:   auto  auto auto auto auto auto;
+
+    position: relative;
+
+    .nav{
+        grid-area: 1/1/2/-1;
+        max-height: 3.5rem;
+        border-top: 1px solid colors.$grey-light-primary;
+        border-bottom: 1px solid colors.$grey-light-primary;
+        align-items: center;
+        padding: 0.5625rem  1.25rem ;
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .banner{
+        grid-area: 2/2/3/-2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2rem;
+        .title{
+            color: colors.$cyan-dark-primary;
+            @extend fonts, .font-label !optional;
+            margin-bottom: 0.5rem;
+        }
+        h3{
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+        p.sub-title{
+            @extend .label;
+            letter-spacing:  -0.03125rem;
+         
+        }
+        .banner-btn-margin{
+            margin: 1.25rem 0;
+        }
+        .banner-footer{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-around;
+
+            .content-container{
+                .title{
+                    display: flex;
+                    margin-bottom: 0.1875rem;
+                }
+                .p-high-light{
+                    color: colors.$black-primary;
+                    font-size: 1.25rem;
+                    font-family: DelaGothicOne;
+                    font-weight: 400;
+                    letter-spacing: -0.015625rem;
+                    span{
+                        color: colors.$cyan-dark-primary;
+                    }
+                }
+            }
+        }
+
+    }
+}
